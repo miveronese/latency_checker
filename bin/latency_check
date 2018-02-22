@@ -1,0 +1,26 @@
+#!/usr/bin/env ruby
+$:.unshift File.expand_path(File.dirname(__FILE__) + '/..')
+
+require 'latency_check/param_parser' 
+require 'latency_check/request_manager'
+
+params = ParamParser.new.parse(ARGV) 
+request = RequestManager.new(params["max-time-seconds"], params["url"], params["seconds-interval"]) { |url, counter| 
+  puts "Request #{counter}..."
+  Request.new.measure(url) 
+}
+
+res = request.response_times
+status = request.status
+average_response_time = res.reduce(:+) / res.size.to_f
+min_response_time = res.min
+max_response_time = res.max
+
+puts "----------------Result:--------------------"
+puts "Site: #{params["url"]}"
+puts "Status: #{status["code"]} #{status["message"]}"
+puts "Total requests: #{res.size}"
+puts "Average response time: #{average_response_time}ms"
+puts "Min response time: #{min_response_time}ms"
+puts "Max response time: #{max_response_time}ms"
+puts "--------------------------------------------"
