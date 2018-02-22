@@ -16,7 +16,7 @@ average_response_time = res.reduce(:+) / res.size.to_f
 min_response_time = res.min
 max_response_time = res.max
 
-puts "----------------Result:--------------------"
+puts "----------------Result---------------------"
 puts "Site: #{params["url"]}"
 puts "Status: #{status["code"]} #{status["message"]}"
 puts "Total requests: #{res.size}"

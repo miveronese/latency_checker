@@ -1,26 +1,27 @@
 # Latency checker
 
-A small Ruby gem that exposes a CLI to check the status of https://gitlab.com  and reports an average response time after probing the site every x seconds for x minute(s).
+A small Ruby gem that exposes a CLI to check the status of a website and reports an average response time after probing the site every x seconds during an specific amount of time.
 
 ## Instalation
 
 In the command line, run:
 
-``` gem install latency_check
+``` 
+gem install latency_check
+
 ```
 
 ## Usage
 
-You can use it from the command line:
+To run it from the command line, you need to inform the url, the interval between each request (in seconds) and the total duration of the test (in seconds). Use the format bellow:
 
 ```
-latency_check --url https://gitlab.com --seconds-interval 10 --max-time-seconds 60
+latency_check --url https://gitlab.com --seconds-interval 10 --duration-seconds 60
 
 ```
 
-You can also change the parameters url, seconds-interval and max-tiem-seconds.
 
-It will give you a summary in the following format:
+The tool will give you a summary in the following format:
 
 ```
 Site: https://gitlab.com

@@ -28,5 +28,6 @@ class RequestManager
       sleep(@sleep_time)
       counter += 1
     end
+    times
   end
 end
