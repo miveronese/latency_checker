@@ -8,7 +8,7 @@ require 'lib/latency_check/request'
 class RequestManagerTest < MiniTest::Unit::TestCase
 
   def setup
-    @manager = RequestManager.new(4, "http://gitlab.com", 2) { |x| 1 }
+    @manager = RequestManager.new(4, "http://google.com", 2) { |x| 1 }
   end
 
   def test_several_requests

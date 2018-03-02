@@ -9,10 +9,10 @@ class ParamParserTest < MiniTest::Unit::TestCase
   end
 
   def test_parse
-    res = @parser.parse(["--url", "https://gitlab.com", "--seconds-interval", "10", "--max-time-seconds", "60"])
+    res = @parser.parse(["--url", "https://google.com", "--seconds-interval", "10", "--max-time-seconds", "60"])
 
     assert_equal(res["seconds-interval"], "10")
     assert_equal(res["max-time-seconds"], "60")
-    assert_equal(res["url"], "https://gitlab.com")
+    assert_equal(res["url"], "https://google.com")
   end
 end

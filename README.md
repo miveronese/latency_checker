@@ -16,7 +16,7 @@ gem install latency_check
 To run it from the command line, you need to inform the url, the interval between each request (in seconds) and the total duration of the test (in seconds). Use the format bellow:
 
 ```
-latency_check --url https://gitlab.com --seconds-interval 10 --duration-seconds 60
+latency_check --url https://google.com --seconds-interval 10 --duration-seconds 60
 
 ```
 
@@ -24,7 +24,7 @@ latency_check --url https://gitlab.com --seconds-interval 10 --duration-seconds 
 The tool will give you a summary in the following format:
 
 ```
-Site: https://gitlab.com
+Site: https://google.com
 Status: HTTP/1.1 302 Found
 Total requests: 6
 Average response time: 3.4s

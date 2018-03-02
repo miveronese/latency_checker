@@ -16,7 +16,7 @@ class RequestTest < MiniTest::Unit::TestCase
   end
 
   def test_measure
-    res = @request.measure("https://gitlab.com")
+    res = @request.measure("https://google.com")
     assert(res >=  1)
   end
 end
